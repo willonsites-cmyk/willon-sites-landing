@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Willon Sites | Sites profissionais prontos, sem mensalidade</title>
+<meta name="description" content="Sites profissionais e otimizados para o seu comércio local. Pagamento único, sem mensalidade de manutenção. Escolha um modelo pronto e coloque seu negócio no ar em poucos dias." />
+
+<!-- Favicon Oficial -->
+<link rel="icon" type="image/jpeg" href="./favicon.jpg" />
+
+<!-- Open Graph / Pré-visualização no WhatsApp -->
+<meta property="og:title" content="Willon Sites | Sites Profissionais Prontos" />
+<meta property="og:description" content="Seu comércio aberto 24h na internet. Pagamento único, sem mensalidade." />
+<meta property="og:image" content="./logo.png" />
+<meta property="og:type" content="website" />
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          navy: {
+            50: '#eef2f8',
+            100: '#d7e0ee',
+            400: '#3a5a8c',
+            600: '#1c3a63',
+            700: '#152c4c',
+            800: '#0f2038',
+            900: '#0a1626',
+          },
+          brand: {
+            blue: '#2563EB',
+            green: '#22C55E',
+            greenDark: '#16A34A',
+          }
+        },
+        boxShadow: {
+          soft: '0 10px 30px -12px rgba(15, 32, 56, 0.18)',
+          card: '0 8px 24px -8px rgba(15, 32, 56, 0.15)',
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Fonts: Sora (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Sora', sans-serif; }
+
+  /* Foco de teclado visível */
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Ícone da seta do <details> customizado */
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+
+  /* ---------- Animações e microinterações ---------- */
+
+  /* Flutuação suave do mockup do hero */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow radial decorativo */
+  @keyframes glow-shift {
+    0%, 100% { opacity: 0.55; transform: translate(0, 0) scale(1); }
+    50% { opacity: 0.85; transform: translate(2%, -2%) scale(1.05); }
+  }
+  .hero-glow {
+    background: radial-gradient(closest-side, rgba(37, 99, 235, 0.16), rgba(37, 99, 235, 0) 70%);
+    animation: glow-shift 9s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+  .hero-glow-secondary {
+    background: radial-gradient(closest-side, rgba(34, 197, 94, 0.14), rgba(34, 197, 94, 0) 70%);
+    animation: glow-shift 11s ease-in-out infinite reverse;
+    will-change: transform, opacity;
+  }
+
+  /* Pulso nos CTAs de WhatsApp */
+  @keyframes pulse-glow {
+    0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45); }
+    70%  { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  }
+  .btn-pulse {
+    animation: pulse-glow 2.6s ease-out infinite;
+  }
+  .btn-pulse:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+
+<body class="bg-slate-50 text-slate-700 antialiased">
+
+<!-- =================== HEADER =================== -->
+<header class="sticky top-0 z-50 bg-slate-50/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 md:h-20 flex items-center justify-between">
+
+    <!-- Logo com Imagem Oficial -->
+    <a href="#topo" class="flex items-center">
+      <img src="./logo.png" alt="Willon Sites" class="h-8 md:h-10 w-auto object-contain">
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <a href="#modelos" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Modelos</a>
+      <a href="#como-funciona" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Como funciona</a>
+      <a href="#vantagens" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Vantagens</a>
+      <a href="#faq" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Dúvidas</a>
+    </nav>
+
+    <!-- CTA WhatsApp -->
+    <a
+      href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Quero%20conhecer%20os%20modelos%20de%20site%20da%20Willon%20Sites."
+      target="_blank" rel="noopener noreferrer"
+      class="btn-pulse inline-flex items-center gap-2 rounded-full bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white text-sm md:text-base font-semibold px-4 py-2.5 md:px-5 md:py-3 shadow-soft transition-all duration-200 ease-in-out"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 md:h-5 md:w-5 fill-current"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
+      Fale no WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- =================== HERO =================== -->
+  <section class="relative overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+      <div class="hero-glow absolute -top-24 left-1/4 h-[26rem] w-[26rem] rounded-full blur-3xl"></div>
+      <div class="hero-glow-secondary absolute top-1/3 -right-16 h-[22rem] w-[22rem] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 md:pt-24 pb-16 md:pb-28 grid md:grid-cols-2 gap-12 md:gap-8 items-center">
+
+      <!-- Texto -->
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full bg-navy-50 text-navy-700 text-xs font-semibold px-3 py-1.5 mb-6">
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-green"></span>
+          Pagamento único · sem mensalidade
+        </span>
+
+        <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+          Seu comércio aberto 24h na internet.
+          <span class="text-navy-700">Sites profissionais</span> entregues em poucos dias.
+        </h1>
+
+        <p class="mt-6 text-base md:text-lg text-slate-600 leading-relaxed max-w-xl">
+          Modelos prontos e validados para padarias, oficinas, clínicas e escritórios.
+          Você paga <strong class="text-slate-800">uma única vez</strong> — sem taxa de manutenção, sem mensalidade de hospedagem.
+          O único custo recorrente é a anuidade do seu domínio.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#modelos" class="inline-flex justify-center items-center rounded-xl bg-brand-blue hover:bg-blue-700 hover:scale-105 hover:shadow-soft text-white font-semibold px-6 py-3.5 shadow-soft transition-all duration-200 ease-in-out">
+            Ver Modelos Prontos
+          </a>
+          <a href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20os%20sites%20da%20Willon%20Sites."
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex justify-center items-center gap-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 hover:scale-105 text-slate-700 font-semibold px-6 py-3.5 transition-all duration-200 ease-in-out">
+            Falar com um especialista
+          </a>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
+          <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Sem mensalidade</span>
+          <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Entrega rápida</span>
+          <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Otimizado para Google</span>
+        </div>
+      </div>
+
+      <!-- Mockup ilustrativo -->
+      <div class="relative">
+        <div class="absolute -inset-6 bg-navy-100/60 rounded-[2.5rem] blur-2xl -z-10"></div>
+        <div class="animate-float rounded-2xl bg-white shadow-soft border border-slate-200 overflow-hidden">
+          <div class="flex items-center gap-1.5 bg-slate-100 px-4 py-3 border-b border-slate-200">
+            <span class="h-2.5 w-2.5 rounded-full bg-red-300"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-yellow-300"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-green-300"></span>
+            <span class="ml-3 text-[11px] text-slate-400 bg-white rounded-full px-3 py-1 border border-slate-200">seunegocio.com.br</span>
+          </div>
+          <div class="p-5 md:p-6 space-y-4">
+            <div class="h-24 rounded-lg bg-gradient-to-br from-navy-700 to-navy-800 flex items-center px-5">
+              <div class="space-y-2">
+                <div class="h-2.5 w-28 rounded bg-white/70"></div>
+                <div class="h-2 w-36 rounded bg-white/40"></div>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <div class="h-14 rounded-lg bg-slate-100"></div>
+              <div class="h-14 rounded-lg bg-slate-100"></div>
+              <div class="h-14 rounded-lg bg-slate-100"></div>
+            </div>
+            <div class="flex items-center justify-between rounded-lg bg-brand-green/10 px-4 py-3">
+              <div class="h-2 w-24 rounded bg-brand-green/50"></div>
+              <span class="h-7 w-7 rounded-full bg-brand-green flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-3.5 w-3.5 fill-white"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Z"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="hidden sm:flex absolute -bottom-5 -left-5 items-center gap-2 rounded-xl bg-white shadow-card border border-slate-200 px-4 py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-brand-green"></span>
+          <span class="text-xs font-semibold text-slate-700">Site no ar em poucos dias</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================== COMO FUNCIONA =================== -->
+  <section id="como-funciona" class="bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Simples assim</span>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Como funciona</h2>
+        <p class="mt-3 text-slate-600">Três passos, sem burocracia e sem termos técnicos.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 md:gap-6">
+        <div class="relative">
+          <span class="font-display text-5xl font-extrabold text-navy-100">01</span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 mt-2">Escolha o modelo</h3>
+          <p class="mt-2 text-slate-600 leading-relaxed">Veja a vitrine de sites prontos e escolha o que melhor combina com o seu negócio.</p>
+        </div>
+        <div class="relative">
+          <span class="font-display text-5xl font-extrabold text-navy-100">02</span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 mt-2">Envie fotos e textos</h3>
+          <p class="mt-2 text-slate-600 leading-relaxed">Você nos envia as informações do seu negócio: fotos, endereço, horários e contato.</p>
+        </div>
+        <div class="relative">
+          <span class="font-display text-5xl font-extrabold text-navy-100">03</span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 mt-2">Site no ar</h3>
+          <p class="mt-2 text-slate-600 leading-relaxed">Nós cuidamos de toda a configuração e publicamos o seu site pronto para atrair clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== VITRINE DE MODELOS =================== -->
+  <section id="modelos" class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+      <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Vitrine</span>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Modelos prontos para o seu negócio</h2>
+      <p class="mt-3 text-slate-600">Cada modelo foi pensado para um tipo de comércio. Escolha o seu e comece hoje.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+
+      <!-- Card 1: Modelo Confiança -->
+      <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+        <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+          <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+            <span class="h-2 w-2 rounded-full bg-red-300"></span>
+            <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+            <span class="h-2 w-2 rounded-full bg-green-300"></span>
+          </div>
+          <div class="overflow-hidden">
+            <div class="h-40 flex items-center justify-center bg-navy-50 border-2 border-dashed border-navy-100 transition-transform duration-300 ease-in-out group-hover:scale-105">
+              <span class="text-xs font-medium text-navy-400 text-center px-4">[ Miniatura do Modelo Confiança aqui ]</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+            Focado em posicionar sua empresa no Google. Ideal para oficinas, assistências técnicas e prestadores de serviços. Destaca sua especialidade e facilita o contato imediato do cliente com você.
+          </p>
+          <a href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Quero%20ver%20o%20Modelo%20Confian%C3%A7a."
+             target="_blank" rel="noopener noreferrer"
+             class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+            Ver Modelo Confiança
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Modelo Agenda -->
+      <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+        <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+          <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+            <span class="h-2 w-2 rounded-full bg-red-300"></span>
+            <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+            <span class="h-2 w-2 rounded-full bg-green-300"></span>
+          </div>
+          <div class="overflow-hidden">
+            <div class="h-40 flex items-center justify-center bg-navy-50 border-2 border-dashed border-navy-100 transition-transform duration-300 ease-in-out group-hover:scale-105">
+              <span class="text-xs font-medium text-navy-400 text-center px-4">[ Miniatura do Modelo Agenda aqui ]</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+            Estrutura desenvolvida para treinadores, clínicas e estúdios. Design limpo e profissional com foco total em converter visitantes em alunos ou pacientes diretamente no seu WhatsApp.
+          </p>
+          <a href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Quero%20ver%20o%20Modelo%20Agenda."
+             target="_blank" rel="noopener noreferrer"
+             class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+            Ver Modelo Agenda
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Modelo Vitrine -->
+      <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+        <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+          <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+            <span class="h-2 w-2 rounded-full bg-red-300"></span>
+            <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+            <span class="h-2 w-2 rounded-full bg-green-300"></span>
+          </div>
+          <div class="overflow-hidden">
+            <div class="h-40 flex items-center justify-center bg-navy-50 border-2 border-dashed border-navy-100 transition-transform duration-300 ease-in-out group-hover:scale-105">
+              <span class="text-xs font-medium text-navy-400 text-center px-4">[ Miniatura do Modelo Vitrine aqui ]</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+            A solução perfeita para padarias, lanchonetes e lojistas de bairro. Exiba seus principais produtos, horários de funcionamento e atraia o público da sua região para a porta do seu negócio.
+          </p>
+          <a href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Quero%20ver%20o%20Modelo%20Vitrine."
+             target="_blank" rel="noopener noreferrer"
+             class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+            Ver Modelo Vitrine
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =================== VANTAGENS =================== -->
+  <section id="vantagens" class="bg-navy-800">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="text-xs font-semibold tracking-wide text-brand-green uppercase">Por que Willon Sites</span>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-3">Feito para durar, sem pesar no seu bolso</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+        <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green mb-4">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0-10v1m0 9v1"/><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="font-display text-white font-semibold">Pagamento único</h3>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Você paga uma vez pelo site. Sem taxa mensal de manutenção, sem surpresas na fatura.</p>
+        </div>
+
+        <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green mb-4">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </span>
+          <h3 class="font-display text-white font-semibold">Carregamento rápido</h3>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Sites leves e otimizados, que carregam rápido e ajudam seu negócio a ser bem avaliado pelo Google.</p>
+        </div>
+
+        <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green mb-4">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <h3 class="font-display text-white font-semibold">Sem mensalidade de hospedagem</h3>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Seu site fica no ar sem custo de hospedagem. Você só arca com a anuidade do seu domínio próprio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FAQ =================== -->
+  <section id="faq" class="max-w-3xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="text-center mb-10 md:mb-14">
+      <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Dúvidas</span>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Perguntas frequentes</h2>
+    </div>
+
+    <div class="space-y-3">
+      <details class="group rounded-xl bg-white border border-slate-200 shadow-card open:shadow-soft transition-shadow duration-300 ease-in-out" open>
+        <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 md:px-6 md:py-5 font-display font-semibold text-slate-900">
+          Tenho que pagar mensalidade?
+          <span class="faq-icon shrink-0 h-6 w-6 rounded-full bg-navy-50 text-navy-700 flex items-center justify-center text-lg leading-none transition-transform duration-200 ease-in-out">+</span>
+        </summary>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-slate-600 leading-relaxed">
+          Não. O pagamento do site é único. O único custo recorrente é a anuidade do seu domínio próprio (o endereço do seu site, ex: seunegocio.com.br), que é pago diretamente ao registrador do domínio.
+        </div>
+      </details>
+
+      <details class="group rounded-xl bg-white border border-slate-200 shadow-card open:shadow-soft transition-shadow duration-300 ease-in-out">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 md:px-6 md:py-5 font-display font-semibold text-slate-900">
+          Como funciona a hospedagem?
+          <span class="faq-icon shrink-0 h-6 w-6 rounded-full bg-navy-50 text-navy-700 flex items-center justify-center text-lg leading-none transition-transform duration-200 ease-in-out">+</span>
+        </summary>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-slate-600 leading-relaxed">
+          Utilizamos uma arquitetura moderna de hospedagem gratuita, rápida e confiável. Isso significa que seu site fica no ar sem que você precise pagar taxas de servidor todo mês.
+        </div>
+      </details>
+
+      <details class="group rounded-xl bg-white border border-slate-200 shadow-card open:shadow-soft transition-shadow duration-300 ease-in-out">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 md:px-6 md:py-5 font-display font-semibold text-slate-900">
+          Posso mudar as cores?
+          <span class="faq-icon shrink-0 h-6 w-6 rounded-full bg-navy-50 text-navy-700 flex items-center justify-center text-lg leading-none transition-transform duration-200 ease-in-out">+</span>
+        </summary>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-slate-600 leading-relaxed">
+          Sim. Adaptamos as cores, a logo e as fontes do modelo escolhido para combinar com a identidade da sua marca, sem alterar o valor do pagamento único.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- =================== CTA FINAL =================== -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-16 md:pb-24">
+    <div class="rounded-2xl bg-gradient-to-br from-navy-800 to-navy-700 px-6 py-12 md:px-16 md:py-16 text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-white">Pronto para colocar seu negócio na internet?</h2>
+      <p class="mt-3 text-navy-100/80 max-w-xl mx-auto">Fale agora com a Willon Sites e escolha o modelo ideal para o seu comércio.</p>
+      <a href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Quero%20colocar%20meu%20neg%C3%B3cio%20na%20internet%20com%20a%20Willon%20Sites."
+         target="_blank" rel="noopener noreferrer"
+         class="btn-pulse mt-7 inline-flex items-center gap-2 rounded-xl bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white font-semibold px-7 py-3.5 shadow-soft transition-all duration-200 ease-in-out">
+        Falar no WhatsApp agora
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="bg-navy-900 text-navy-100/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 md:py-14 flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+
+    <div class="text-center md:text-left">
+      <!-- Logo com fundo protegido para o rodapé escuro -->
+      <a href="#topo" class="inline-flex items-center bg-white/95 rounded-lg px-2.5 py-1">
+        <img src="./logo.png" alt="Willon Sites" class="h-7 w-auto object-contain">
+      </a>
+      <p class="mt-3 text-sm max-w-xs">Sites prontos e otimizados para o comércio local. Pagamento único, sem mensalidade.</p>
+    </div>
+
+    <div class="flex flex-col items-center md:items-start gap-2 text-sm">
+      <span class="text-white font-semibold mb-1">Contato</span>
+      <a href="https://wa.me/5511974121551" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200 ease-in-out">WhatsApp</a>
+      <a href="mailto:contato@willonsites.com.br" class="hover:text-white transition-colors duration-200 ease-in-out">contato@willonsites.com.br</a>
+      <a href="#modelos" class="hover:text-white transition-colors duration-200 ease-in-out">Modelos de site</a>
+    </div>
+
+  </div>
+  <div class="border-t border-white/10">
+    <p class="max-w-7xl mx-auto px-5 sm:px-8 py-5 text-center text-xs text-navy-100/50">
+      &copy; <span id="ano-atual">2026</span> Willon Sites. Todos os direitos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp (mobile) -->
+<a href="https://wa.me/5511974121551?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20sites%20da%20Willon%20Sites."
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Falar no WhatsApp"
+   class="btn-pulse md:hidden fixed bottom-5 right-5 z-50 flex items-center justify-center h-14 w-14 rounded-full bg-brand-green shadow-soft transition-transform duration-200 ease-in-out hover:scale-110">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-7 w-7 fill-white"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
