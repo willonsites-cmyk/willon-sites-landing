@@ -123,6 +123,18 @@
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
   }
+
+  /* ---------- Carrossel da Vitrine de Modelos ---------- */
+
+  /* Esconde a barra de rolagem horizontal, mantendo o arraste/scroll por toque */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 </style>
 </head>
 
@@ -274,137 +286,191 @@
     <div>
       
       <!-- ABA 1: SERVIÇOS -->
-      <div id="tab-servicos" class="tab-content grid md:grid-cols-3 gap-6 md:gap-8 animate-fade-tab">
-        <!-- Card 1: Modelo Confiança 1 -->
-        <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
-          <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
-            <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
-              <span class="h-2 w-2 rounded-full bg-red-300"></span>
-              <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
-              <span class="h-2 w-2 rounded-full bg-green-300"></span>
-            </div>
-            <div class="overflow-hidden">
-              <div class="aspect-video w-full overflow-hidden bg-navy-50">
-                <img 
-                  src="./miniatura-confianca1.webp" 
-                  alt="Prévia do Modelo Confiança" 
-                  class="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-              Focado em posicionar sua empresa no Google. Ideal para oficinas, assistências técnicas e prestadores de serviços. Destaca sua especialidade e facilita o contato imediato do cliente.
-            </p>
-            <a href="https://willon-sites-modelo-confianca1.netlify.app"
-               target="_blank" rel="noopener noreferrer"
-               class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
-              Ver site ao vivo
-            </a>
-          </div>
-        </article>
+      <div id="tab-servicos" class="tab-content animate-fade-tab">
 
-        <!-- Card 2: Modelo Confiança 2 -->
-        <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
-          <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
-            <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
-              <span class="h-2 w-2 rounded-full bg-red-300"></span>
-              <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
-              <span class="h-2 w-2 rounded-full bg-green-300"></span>
-            </div>
-            <div class="overflow-hidden">
-              <div class="aspect-video w-full overflow-hidden bg-indigo-50">
-                <img 
-                  src="./miniatura-confianca2.webp" 
-                  alt="Prévia do Modelo Confiança 2 - Instalações Elétricas" 
-                  class="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
+        <!-- Setas de navegação do carrossel -->
+        <div class="flex justify-end gap-2 mb-4">
+          <button type="button" onclick="scrollCarousel('carousel-servicos', -1)" aria-label="Modelo anterior"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" onclick="scrollCarousel('carousel-servicos', 1)" aria-label="Próximo modelo"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Trilho do carrossel -->
+        <div id="carousel-servicos" class="carousel-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-4">
+
+          <!-- Card 1: Modelo Confiança 1 -->
+          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-navy-50">
+                  <img 
+                    src="./miniatura-confianca1.webp" 
+                    alt="Prévia do Modelo Confiança" 
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 2</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-              Design técnico e claro voltado para eletricistas, instaladores e manutenção residencial. Transmite segurança com foco em laudo, garantia por escrito e chamadas de plantão.
-            </p>
-            <a href="https://willon-sites-modelo-confianca2.netlify.app"
-               target="_blank" rel="noopener noreferrer"
-               class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
-              Ver site ao vivo
-            </a>
-          </div>
-        </article>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Focado em posicionar sua empresa no Google. Ideal para oficinas, assistências técnicas e prestadores de serviços. Destaca sua especialidade e facilita o contato imediato do cliente.
+              </p>
+              <a href="https://willon-sites-modelo-confianca1.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Modelo Confiança 2 -->
+          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-indigo-50">
+                  <img 
+                    src="./miniatura-confianca2.webp" 
+                    alt="Prévia do Modelo Confiança 2 - Instalações Elétricas" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 2</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Design técnico e claro voltado para eletricistas, instaladores e manutenção residencial. Transmite segurança com foco em laudo, garantia por escrito e chamadas de plantão.
+              </p>
+              <a href="https://willon-sites-modelo-confianca2.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
       <!-- ABA 2: SAÚDE E BEM-ESTAR -->
-      <div id="tab-saude" class="tab-content hidden grid md:grid-cols-3 gap-6 md:gap-8 animate-fade-tab">
-        <!-- Card 1: Modelo Agenda -->
-        <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
-          <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
-            <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
-              <span class="h-2 w-2 rounded-full bg-red-300"></span>
-              <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
-              <span class="h-2 w-2 rounded-full bg-green-300"></span>
-            </div>
-            <div class="overflow-hidden">
-              <div class="aspect-video w-full overflow-hidden bg-emerald-50">
-                <img 
-                  src="./miniatura-agenda1.webp" 
-                  alt="Prévia do Modelo Agenda" 
-                  class="w-full h-full object-cover object-top"
-                />
+      <div id="tab-saude" class="tab-content hidden animate-fade-tab">
+
+        <!-- Setas de navegação do carrossel -->
+        <div class="flex justify-end gap-2 mb-4">
+          <button type="button" onclick="scrollCarousel('carousel-saude', -1)" aria-label="Modelo anterior"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" onclick="scrollCarousel('carousel-saude', 1)" aria-label="Próximo modelo"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Trilho do carrossel -->
+        <div id="carousel-saude" class="carousel-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-4">
+
+          <!-- Card 1: Modelo Agenda -->
+          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-emerald-50">
+                  <img 
+                    src="./miniatura-agenda1.webp" 
+                    alt="Prévia do Modelo Agenda" 
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-              Estrutura desenvolvida para treinadores, clínicas e estúdios. Design limpo e profissional com foco total em converter visitantes em alunos ou pacientes diretamente no seu WhatsApp.
-            </p>
-            <a href="https://willon-sites-modelo-agenda1.netlify.app"
-               target="_blank" rel="noopener noreferrer"
-               class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
-              Ver site ao vivo
-            </a>
-          </div>
-        </article>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Estrutura desenvolvida para treinadores, clínicas e estúdios. Design limpo e profissional com foco total em converter visitantes em alunos ou pacientes diretamente no seu WhatsApp.
+              </p>
+              <a href="https://willon-sites-modelo-agenda1.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
       <!-- ABA 3: COMÉRCIO LOCAL -->
-      <div id="tab-comercio" class="tab-content hidden grid md:grid-cols-3 gap-6 md:gap-8 animate-fade-tab">
-        <!-- Card 1: Modelo Vitrine -->
-        <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
-          <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
-            <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
-              <span class="h-2 w-2 rounded-full bg-red-300"></span>
-              <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
-              <span class="h-2 w-2 rounded-full bg-green-300"></span>
-            </div>
-            <div class="overflow-hidden">
-              <div class="aspect-video w-full overflow-hidden bg-orange-50">
-                <img 
-                  src="./miniatura-vitrine1.webp" 
-                  alt="Prévia do Modelo Vitrine" 
-                  class="w-full h-full object-cover object-top"
-                />
+      <div id="tab-comercio" class="tab-content hidden animate-fade-tab">
+
+        <!-- Setas de navegação do carrossel -->
+        <div class="flex justify-end gap-2 mb-4">
+          <button type="button" onclick="scrollCarousel('carousel-comercio', -1)" aria-label="Modelo anterior"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" onclick="scrollCarousel('carousel-comercio', 1)" aria-label="Próximo modelo"
+                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Trilho do carrossel -->
+        <div id="carousel-comercio" class="carousel-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-4">
+
+          <!-- Card 1: Modelo Vitrine -->
+          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-orange-50">
+                  <img 
+                    src="./miniatura-vitrine1.webp" 
+                    alt="Prévia do Modelo Vitrine" 
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-              A solução perfeita para padarias, lanchonetes e lojistas de bairro. Exiba seus principais produtos, horários de funcionamento e atraia o público da sua região para a sua porta.
-            </p>
-            <a href="https://willon-sites-modelo-vitrine1.netlify.app"
-               target="_blank" rel="noopener noreferrer"
-               class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
-              Ver site ao vivo
-            </a>
-          </div>
-        </article>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                A solução perfeita para padarias, lanchonetes e lojistas de bairro. Exiba seus principais produtos, horários de funcionamento e atraia o público da sua região para a sua porta.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine1.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
     </div>
@@ -562,6 +628,27 @@
     // 4. Transformar o botão clicado no botão "Ativo"
     clickedBtn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600', 'inactive-tab');
     clickedBtn.classList.add('bg-navy-800', 'text-white', 'shadow-md', 'active-tab');
+
+    // 5. Resetar o carrossel da aba ativada para o primeiro card
+    const activeTrack = activeTab.querySelector('.carousel-track');
+    if (activeTrack) {
+      activeTrack.scrollTo({ left: 0, behavior: 'auto' });
+    }
+  }
+
+  // Navegação do carrossel de modelos (setas Anterior / Próximo)
+  function scrollCarousel(trackId, direction) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+
+    const firstCard = track.querySelector('article');
+    if (!firstCard) return;
+
+    // Distância de deslocamento: largura de um card + o espaçamento (gap-6 = 24px)
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+    const step = firstCard.getBoundingClientRect().width + gap;
+
+    track.scrollBy({ left: direction * step, behavior: 'smooth' });
   }
 </script>
 
