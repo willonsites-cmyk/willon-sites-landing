@@ -135,6 +135,30 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  /* ---------- Estilos das Abas (Fix para Mobile & Desktop) ---------- */
+  .tab-btn {
+    transition: all 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tab-btn.active-tab {
+    background-color: #0f2038 !important;
+    color: #ffffff !important;
+    border-color: #0f2038 !important;
+    box-shadow: 0 4px 12px -2px rgba(15, 32, 56, 0.25) !important;
+  }
+  .tab-btn.inactive-tab {
+    background-color: #ffffff !important;
+    color: #475569 !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .tab-btn.inactive-tab:hover {
+      background-color: #f8fafc !important;
+      color: #0f2038 !important;
+    }
+  }
 </style>
 </head>
 
@@ -272,13 +296,13 @@
 
     <!-- Botões das Abas -->
     <div class="flex flex-wrap justify-center gap-3 mb-10 md:mb-14">
-      <button onclick="switchTab('tab-servicos', this)" class="tab-btn active-tab bg-navy-800 text-white shadow-md font-semibold px-6 py-3 rounded-full transition-all duration-200">
+      <button onclick="switchTab('tab-servicos', this)" class="tab-btn active-tab font-semibold px-6 py-3 rounded-full">
         🛠️ Serviços
       </button>
-      <button onclick="switchTab('tab-saude', this)" class="tab-btn inactive-tab bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 font-semibold px-6 py-3 rounded-full transition-all duration-200">
+      <button onclick="switchTab('tab-saude', this)" class="tab-btn inactive-tab font-semibold px-6 py-3 rounded-full">
         🩺 Saúde e Bem-Estar
       </button>
-      <button onclick="switchTab('tab-comercio', this)" class="tab-btn inactive-tab bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 font-semibold px-6 py-3 rounded-full transition-all duration-200">
+      <button onclick="switchTab('tab-comercio', this)" class="tab-btn inactive-tab font-semibold px-6 py-3 rounded-full">
         🏪 Comércio Local
       </button>
     </div>
@@ -1151,20 +1175,22 @@
       tab.classList.add('hidden');
     });
 
-    // 2. Remover a classe "Ativa" de todos os botões e colocar a "Inativa"
+    // 2. Resetar todos os botões para inativo
     const buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(btn => {
-      btn.classList.remove('bg-navy-800', 'text-white', 'shadow-md', 'active-tab');
-      btn.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600', 'inactive-tab');
+      btn.classList.remove('active-tab');
+      btn.classList.add('inactive-tab');
     });
 
     // 3. Mostrar apenas o conteúdo da aba clicada
     const activeTab = document.getElementById(tabId);
-    activeTab.classList.remove('hidden');
+    if (activeTab) {
+      activeTab.classList.remove('hidden');
+    }
 
-    // 4. Transformar o botão clicado no botão "Ativo"
-    clickedBtn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600', 'inactive-tab');
-    clickedBtn.classList.add('bg-navy-800', 'text-white', 'shadow-md', 'active-tab');
+    // 4. Transformar o botão clicado no botão ativo
+    clickedBtn.classList.remove('inactive-tab');
+    clickedBtn.classList.add('active-tab');
 
     // 5. Resetar o carrossel da aba ativada para o primeiro card
     const activeTrack = activeTab.querySelector('.carousel-track');
