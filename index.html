@@ -135,6 +135,15 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  /* Destaque estilo "marca texto" para trechos do título */
+  .text-highlight {
+    background-color: #2563EB;
+    color: #ffffff;
+    padding: 0.05em 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
 </style>
 </head>
 
@@ -183,16 +192,16 @@
       <div>
         <span class="inline-flex items-center gap-2 rounded-full bg-navy-50 text-navy-700 text-xs font-semibold px-3 py-1.5 mb-6">
           <span class="h-1.5 w-1.5 rounded-full bg-brand-green"></span>
-          Pagamento único · sem mensalidade
+          R$ 500 · pagamento único · sem mensalidade
         </span>
 
         <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
           Seu comércio aberto 24h na internet.
-          <span class="text-navy-700">Sites profissionais</span> entregues em poucos dias.
+          <span class="text-highlight">Sites profissionais</span> entregues em poucos dias.
         </h1>
 
         <p class="mt-6 text-base md:text-lg text-slate-600 leading-relaxed max-w-xl">
-          Modelos prontos e validados para padarias, oficinas, clínicas e escritórios.
+          Modelos prontos e validados para clínicas, advogados, contadores, salões de beleza e outros negócios locais que precisam de presença profissional agora.
           Você paga <strong class="text-slate-800">uma única vez</strong> — sem taxa de manutenção, sem mensalidade de hospedagem.
           O único custo recorrente é a anuidade do seu domínio.
         </p>
@@ -266,7 +275,7 @@
     <div class="max-w-2xl mx-auto text-center mb-10 md:mb-12">
       <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Vitrine</span>
       <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Modelos prontos para o seu negócio</h2>
-      <p class="mt-3 text-slate-600">Escolha o seu segmento abaixo e veja as opções disponíveis para você começar hoje.</p>
+      <p class="mt-3 text-slate-600">Escolha o seu segmento abaixo e veja as opções disponíveis. Qualquer modelo escolhido sai por <strong class="text-slate-800">R$ 500,00</strong>, pagamento único.</p>
     </div>
 
     <!-- Botões das Abas -->
@@ -938,7 +947,7 @@
             <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0-10v1m0 9v1"/><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
           <h3 class="font-display text-white font-semibold">Pagamento único</h3>
-          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Você paga uma vez pelo site. Sem taxa mensal de manutenção, sem surpresas na fatura.</p>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Você paga uma vez pelo site, apenas R$ 500,00. Sem taxa mensal de manutenção, sem surpresas na fatura.</p>
         </div>
 
         <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
