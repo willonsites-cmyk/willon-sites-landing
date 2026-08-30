@@ -140,7 +140,8 @@
   .text-highlight {
     background-color: #2563EB;
     color: #ffffff;
-    padding: 0.05em 0.3em;
+    padding: 0.15em 0.35em;
+    border-radius: 0.25em;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
@@ -195,7 +196,7 @@
           R$ 500 · pagamento único · sem mensalidade
         </span>
 
-        <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+        <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-snug">
           Seu comércio aberto 24h na internet.
           <span class="text-highlight">Sites profissionais</span> entregues em poucos dias.
         </h1>
@@ -233,9 +234,9 @@
           class="animate-float w-full max-w-lg md:max-w-none h-auto object-contain drop-shadow-2xl"
         />
         <!-- Selo flutuante de autoridade -->
-        <div class="hidden sm:flex absolute -bottom-3 -left-3 items-center gap-2 rounded-xl bg-white shadow-card border border-slate-200 px-4 py-3">
-          <span class="h-2.5 w-2.5 rounded-full bg-brand-green"></span>
-          <span class="text-xs font-semibold text-slate-700">⚡ Entrega em até 5 dias úteis</span>
+        <div class="flex absolute -bottom-3 left-2 sm:-left-3 items-center gap-2 rounded-xl bg-white shadow-card border border-slate-200 px-3 py-2 sm:px-4 sm:py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-brand-green shrink-0"></span>
+          <span class="text-[11px] sm:text-xs font-semibold text-slate-700 whitespace-nowrap">⚡ Entrega em até 5 dias úteis</span>
         </div>
       </div>
     </div>
@@ -1105,9 +1106,4 @@
     const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
     const step = firstCard.getBoundingClientRect().width + gap;
 
-    track.scrollBy({ left: direction * step, behavior: 'smooth' });
-  }
-</script>
-
-</body>
-</html>
+    track.scro
