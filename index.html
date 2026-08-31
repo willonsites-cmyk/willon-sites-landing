@@ -494,6 +494,24 @@
           </article>
 
         </div>
+
+        <!-- Navegação rápida de rodapé da vitrine -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            Explorar outras categorias:
+          </p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+              🛠️ Serviços
+            </button>
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🩺 Saúde e Bem-Estar
+            </button>
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🏪 Comércio Local
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- ABA 2: SAÚDE E BEM-ESTAR (GRADE ABERTA 3x2) -->
@@ -585,7 +603,7 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 3</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-                Layout acolhedor e humanizado para psicólogos, terapeutas e psicanalistas. Transmite segurança, sigilo profissional e foco em consultas presenciais ou online.
+                Layout acolhedor e humanizado para psicólogos, terapeutas e psicanalistas. Transmite segurança, sigilo profissional e foco em consultas presencial ou online.
               </p>
               <a href="https://willon-sites-modelo-agenda3.netlify.app"
                  target="_blank" rel="noopener noreferrer"
@@ -691,6 +709,24 @@
             </div>
           </article>
 
+        </div>
+
+        <!-- Navegação rápida de rodapé da vitrine -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            Explorar outras categorias:
+          </p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🛠️ Serviços
+            </button>
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+              🩺 Saúde e Bem-Estar
+            </button>
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🏪 Comércio Local
+            </button>
+          </div>
         </div>
       </div>
 
@@ -889,6 +925,24 @@
             </div>
           </article>
 
+        </div>
+
+        <!-- Navegação rápida de rodapé da vitrine -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            Explorar outras categorias:
+          </p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🛠️ Serviços
+            </button>
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🩺 Saúde e Bem-Estar
+            </button>
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+              🏪 Comércio Local
+            </button>
+          </div>
         </div>
       </div>
 
@@ -1121,8 +1175,8 @@
       tab.classList.add('hidden');
     });
 
-    // 2. Resetar todos os botões para inativo
-    const buttons = document.querySelectorAll('.tab-btn');
+    // 2. Resetar todos os botões do topo para inativo
+    const buttons = document.querySelectorAll('#modelos .tab-btn');
     buttons.forEach(btn => {
       btn.classList.remove('active-tab');
       btn.classList.add('inactive-tab');
@@ -1134,9 +1188,25 @@
       activeTab.classList.remove('hidden');
     }
 
-    // 4. Transformar o botão clicado no botão ativo
-    clickedBtn.classList.remove('inactive-tab');
-    clickedBtn.classList.add('active-tab');
+    // 4. Sincronizar o botão ativo no topo
+    const tabIndexMap = {
+      'tab-servicos': 0,
+      'tab-saude': 1,
+      'tab-comercio': 2
+    };
+    if (buttons[tabIndexMap[tabId]]) {
+      buttons[tabIndexMap[tabId]].classList.remove('inactive-tab');
+      buttons[tabIndexMap[tabId]].classList.add('active-tab');
+    }
+  }
+
+  // Alterna a aba e reposiciona suavemente no topo da vitrine de modelos
+  function switchTabAndScroll(tabId, clickedBtn) {
+    switchTab(tabId, clickedBtn);
+    const modelosSection = document.getElementById('modelos');
+    if (modelosSection) {
+      modelosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 </script>
 
