@@ -124,18 +124,6 @@
     * { animation: none !important; transition: none !important; }
   }
 
-  /* ---------- Carrossel da Vitrine de Modelos ---------- */
-
-  /* Esconde a barra de rolagem horizontal, mantendo o arraste/scroll por toque */
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
   /* ---------- Estilos das Abas (Fix para Mobile & Desktop) ---------- */
   .tab-btn {
     transition: all 0.2s ease-in-out;
@@ -286,16 +274,16 @@
     </div>
   </section>
 
-  <!-- =================== VITRINE DE MODELOS (SISTEMA DE ABAS) =================== -->
+  <!-- =================== VITRINE DE MODELOS (SISTEMA DE ABAS EM GRADE ABERTA) =================== -->
   <section id="modelos" class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
-    <div class="max-w-2xl mx-auto text-center mb-10 md:mb-12">
+    <div class="max-w-2xl mx-auto text-center mb-10 md:mb-14">
       <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Vitrine</span>
       <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Modelos prontos para o seu negócio</h2>
-      <p class="mt-3 text-slate-600">Escolha o seu segmento abaixo e veja as opções disponíveis. O valor do modelo escolhido sai por <strong class="text-slate-900">R$ 500,00</strong>, pagamento único.</p>
+      <p class="mt-3 text-slate-600">Escolha o seu segmento abaixo e veja as 6 opções disponíveis. O valor do modelo escolhido sai por <strong class="text-slate-900">R$ 500,00</strong>, pagamento único.</p>
     </div>
 
     <!-- Botões das Abas -->
-    <div class="flex flex-wrap justify-center gap-3 mb-10 md:mb-14">
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
       <button onclick="switchTab('tab-servicos', this)" class="tab-btn active-tab font-semibold px-6 py-3 rounded-full">
         🛠️ Serviços
       </button>
@@ -310,26 +298,12 @@
     <!-- Container do Conteúdo das Abas -->
     <div>
       
-      <!-- ABA 1: SERVIÇOS -->
+      <!-- ABA 1: SERVIÇOS (GRADE ABERTA 3x2) -->
       <div id="tab-servicos" class="tab-content animate-fade-tab">
-
-        <!-- Setas de navegação do carrossel -->
-        <div class="flex justify-end gap-2 mb-4">
-          <button type="button" onclick="scrollCarousel('carousel-servicos', -1)" aria-label="Modelo anterior"
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button type="button" onclick="scrollCarousel('carousel-servicos', 1)" aria-label="Próximo modelo"
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-
-        <!-- Trilho do carrossel -->
-        <div id="carousel-servicos" class="carousel-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Card 1: Modelo Confiança 1 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -360,7 +334,7 @@
           </article>
 
           <!-- Card 2: Modelo Confiança 2 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -392,7 +366,7 @@
           </article>
 
           <!-- Card 3: Modelo Confiança 3 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -424,7 +398,7 @@
           </article>
 
           <!-- Card 4: Modelo Confiança 4 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -435,7 +409,7 @@
                 <div class="aspect-video w-full overflow-hidden bg-cyan-50">
                   <img 
                     src="./miniatura-confianca4.webp" 
-                    alt="Prévia do Modelo Confiança 4 - Refrigeração & Ar-Condicionado" 
+                    alt="Prévia do Modelo Confiança 4 - Barbearia & Estilo Masculino" 
                     class="w-full h-full object-cover object-top"
                     loading="lazy"
                   />
@@ -445,8 +419,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 4</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-  Visual premium e refinado para barbearias e estúdios masculinos. Apresenta tabela de serviços, fotos da equipe, cortes em destaque e agendamento direto de horário via WhatsApp.
-</p>
+                Visual premium e refinado para barbearias e estúdios masculinos. Apresenta tabela de serviços, fotos da equipe, cortes em destaque e agendamento direto de horário via WhatsApp.
+              </p>
               <a href="https://willon-sites-modelo-confianca4.netlify.app"
                  target="_blank" rel="noopener noreferrer"
                  class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
@@ -456,7 +430,7 @@
           </article>
 
           <!-- Card 5: Modelo Confiança 5 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -488,7 +462,7 @@
           </article>
 
           <!-- Card 6: Modelo Confiança 6 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -522,26 +496,12 @@
         </div>
       </div>
 
-      <!-- ABA 2: SAÚDE E BEM-ESTAR -->
+      <!-- ABA 2: SAÚDE E BEM-ESTAR (GRADE ABERTA 3x2) -->
       <div id="tab-saude" class="tab-content hidden animate-fade-tab">
-
-        <!-- Setas de navegação do carrossel -->
-        <div class="flex justify-end gap-2 mb-4">
-          <button type="button" onclick="scrollCarousel('carousel-saude', -1)" aria-label="Modelo anterior"
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button type="button" onclick="scrollCarousel('carousel-saude', 1)" aria-label="Próximo modelo"
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-
-        <!-- Trilho do carrossel -->
-        <div id="carousel-saude" class="carousel-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Card 1: Modelo Agenda 1 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -572,7 +532,7 @@
           </article>
 
           <!-- Card 2: Modelo Agenda 2 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -604,7 +564,7 @@
           </article>
 
           <!-- Card 3: Modelo Agenda 3 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -636,7 +596,7 @@
           </article>
 
           <!-- Card 4: Modelo Agenda 4 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -657,8 +617,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 4</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-  Focado em nutricionistas e clínicas de emagrecimento saudável. Apresenta programas nutricionais, acompanhamento individual, histórias de superação e agendamento de consultas.
-</p>
+                Focado em nutricionistas e clínicas de emagrecimento saudável. Apresenta programas nutricionais, acompanhamento individual, histórias de superação e agendamento de consultas.
+              </p>
               <a href="https://willon-sites-modelo-agenda4.netlify.app"
                  target="_blank" rel="noopener noreferrer"
                  class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
@@ -668,7 +628,7 @@
           </article>
 
           <!-- Card 5: Modelo Agenda 5 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -689,8 +649,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 5</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-  Página humanizada para nutricionistas e coaches de saúde. Destaca a metodologia sem dietas radicais, programas de reeducação alimentar e agendamento direto pelo WhatsApp.
-</p>
+                Página humanizada para nutricionistas e coaches de saúde. Destaca a metodologia sem dietas radicais, programas de reeducação alimentar e agendamento direto pelo WhatsApp.
+              </p>
               <a href="https://willon-sites-modelo-agenda5.netlify.app"
                  target="_blank" rel="noopener noreferrer"
                  class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
@@ -700,7 +660,7 @@
           </article>
 
           <!-- Card 6: Modelo Agenda 6 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -734,26 +694,12 @@
         </div>
       </div>
 
-      <!-- ABA 3: COMÉRCIO LOCAL -->
+      <!-- ABA 3: COMÉRCIO LOCAL (GRADE ABERTA 3x2) -->
       <div id="tab-comercio" class="tab-content hidden animate-fade-tab">
-
-        <!-- Setas de navegação do carrossel -->
-        <div class="flex justify-end gap-2 mb-4">
-          <button type="button" onclick="scrollCarousel('carousel-comercio', -1)" aria-label="Modelo anterior"
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button type="button" onclick="scrollCarousel('carousel-comercio', 1)" aria-label="Próximo modelo"
-                  class="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-card text-slate-600 hover:bg-navy-800 hover:text-white hover:border-navy-800 transition-all duration-200 ease-in-out">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-
-        <!-- Trilho do carrossel -->
-        <div id="carousel-comercio" class="carousel-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Card 1: Modelo Vitrine 1 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -761,7 +707,7 @@
                 <span class="h-2 w-2 rounded-full bg-green-300"></span>
               </div>
               <div class="overflow-hidden">
-                <div class="aspect-video w-full overflow-hidden bg-orange-50">
+                <div class="aspect-video w-full overflow-hidden bg-emerald-950">
                   <img 
                     src="./miniatura-vitrine1.webp" 
                     alt="Prévia do Modelo Vitrine 1 - Empório Natural e Produtos a Granel" 
@@ -773,8 +719,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-  Visual orgânico e premium para empórios, lojas de produtos a granel e alimentos saudáveis. Destaque para catálogo de itens frescos, quebra de objeções e montagem de pedidos no WhatsApp.
-</p>
+                Visual orgânico e premium para empórios, lojas de produtos a granel e alimentos saudáveis. Destaque para catálogo de itens frescos, quebra de objeções e montagem de pedidos no WhatsApp.
+              </p>
               <a href="https://willon-sites-modelo-vitrine1.netlify.app"
                  target="_blank" rel="noopener noreferrer"
                  class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
@@ -784,7 +730,7 @@
           </article>
 
           <!-- Card 2: Modelo Vitrine 2 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -816,7 +762,7 @@
           </article>
 
           <!-- Card 3: Modelo Vitrine 3 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -837,8 +783,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 3</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-  Layout sofisticado para restaurantes, bistrôs e alta gastronomia. Apresenta pratos autorais, carta de vinhos selecionada e canal rápido para reservas de mesa no WhatsApp.
-</p>
+                Layout sofisticado para restaurantes, bistrôs e alta gastronomia. Apresenta pratos autorais, carta de vinhos selecionada e canal rápido para reservas de mesa no WhatsApp.
+              </p>
               <a href="https://willon-sites-modelo-vitrine3.netlify.app"
                  target="_blank" rel="noopener noreferrer"
                  class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
@@ -848,7 +794,7 @@
           </article>
 
           <!-- Card 4: Modelo Vitrine 4 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -869,8 +815,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 4</h3>
               <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-  Visual acolhedor para clínicas veterinárias e pet shops. Destaque para pacotes de banho e tosa, consultas com especialistas, fotos do espaço e agendamento de horários.
-</p>
+                Visual acolhedor para clínicas veterinárias e pet shops. Destaque para pacotes de banho e tosa, consultas com especialistas, fotos do espaço e agendamento de horários.
+              </p>
               <a href="https://willon-sites-modelo-vitrine4.netlify.app"
                  target="_blank" rel="noopener noreferrer"
                  class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
@@ -880,7 +826,7 @@
           </article>
 
           <!-- Card 5: Modelo Vitrine 5 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -912,7 +858,7 @@
           </article>
 
           <!-- Card 6: Modelo Vitrine 6 -->
-          <article class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
             <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
               <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
                 <span class="h-2 w-2 rounded-full bg-red-300"></span>
@@ -1191,27 +1137,6 @@
     // 4. Transformar o botão clicado no botão ativo
     clickedBtn.classList.remove('inactive-tab');
     clickedBtn.classList.add('active-tab');
-
-    // 5. Resetar o carrossel da aba ativada para o primeiro card
-    const activeTrack = activeTab.querySelector('.carousel-track');
-    if (activeTrack) {
-      activeTrack.scrollTo({ left: 0, behavior: 'auto' });
-    }
-  }
-
-  // Navegação do carrossel de modelos (setas Anterior / Próximo)
-  function scrollCarousel(trackId, direction) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-
-    const firstCard = track.querySelector('article');
-    if (!firstCard) return;
-
-    // Distância de deslocamento: largura de um card + o espaçamento (gap-6 = 24px)
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
-    const step = firstCard.getBoundingClientRect().width + gap;
-
-    track.scrollBy({ left: direction * step, behavior: 'smooth' });
   }
 </script>
 
