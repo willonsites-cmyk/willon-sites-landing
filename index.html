@@ -1,163 +1,1302 @@
-<!-- =================== GOOGLE MEU NEGÓCIO (COMPLETO & PERSUASIVO) =================== -->
-  <section id="google-meu-negocio" class="relative bg-slate-100/80 border-y border-slate-200 py-16 md:py-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      
-      <!-- Cabeçalho Principal da Seção -->
-      <div class="max-w-3xl mx-auto text-center mb-14 md:mb-20">
-        <span class="inline-flex items-center gap-2 rounded-full bg-blue-50 text-brand-blue text-xs font-semibold px-3.5 py-1.5 mb-4 border border-blue-200 shadow-sm">
-          <span class="h-2 w-2 rounded-full bg-brand-blue animate-pulse"></span>
-          Presença Local & Google Maps
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Willon Sites | Sites profissionais prontos, sem mensalidade</title>
+<meta name="description" content="Sites profissionais e otimizados para o seu comércio local. Pagamento único de R$ 500, sem mensalidade de manutenção. Escolha um modelo pronto e coloque seu negócio no ar em poucos dias." />
+
+<!-- Favicon Oficial -->
+<link rel="icon" type="image/jpeg" href="./favicon.jpg" />
+
+<!-- Open Graph / Pré-visualização no WhatsApp -->
+<meta property="og:title" content="Willon Sites | Sites Profissionais Prontos" />
+<meta property="og:description" content="Seu comércio aberto 24h na internet. Apenas R$ 500,00 pagamento único, sem mensalidade." />
+<meta property="og:image" content="./logo.png" />
+<meta property="og:type" content="website" />
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          navy: {
+            50: '#eef2f8',
+            100: '#d7e0ee',
+            400: '#3a5a8c',
+            600: '#1c3a63',
+            700: '#152c4c',
+            800: '#0f2038',
+            900: '#0a1626',
+          },
+          brand: {
+            blue: '#2563EB',
+            green: '#22C55E',
+            greenDark: '#16A34A',
+          }
+        },
+        boxShadow: {
+          soft: '0 10px 30px -12px rgba(15, 32, 56, 0.18)',
+          card: '0 8px 24px -8px rgba(15, 32, 56, 0.15)',
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Fonts: Sora (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Sora', sans-serif; }
+
+  /* Foco de teclado visível */
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Ícone da seta do <details> customizado */
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+
+  /* ---------- Animações e microinterações ---------- */
+
+  /* Flutuação suave do mockup do hero */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow radial decorativo */
+  @keyframes glow-shift {
+    0%, 100% { opacity: 0.55; transform: translate(0, 0) scale(1); }
+    50% { opacity: 0.85; transform: translate(2%, -2%) scale(1.05); }
+  }
+  .hero-glow {
+    background: radial-gradient(closest-side, rgba(37, 99, 235, 0.16), rgba(37, 99, 235, 0) 70%);
+    animation: glow-shift 9s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+  .hero-glow-secondary {
+    background: radial-gradient(closest-side, rgba(34, 197, 94, 0.14), rgba(34, 197, 94, 0) 70%);
+    animation: glow-shift 11s ease-in-out infinite reverse;
+    will-change: transform, opacity;
+  }
+
+  /* Pulso nos CTAs de WhatsApp */
+  @keyframes pulse-glow {
+    0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45); }
+    70%  { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  }
+  .btn-pulse {
+    animation: pulse-glow 2.6s ease-out infinite;
+  }
+  .btn-pulse:hover {
+    animation-play-state: paused;
+  }
+
+  /* Animação para a troca de abas */
+  @keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-tab {
+    animation: fadeInTab 0.4s ease-out forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* ---------- Estilos das Abas (Fix para Mobile & Desktop) ---------- */
+  .tab-btn {
+    transition: all 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tab-btn.active-tab {
+    background-color: #0f2038 !important;
+    color: #ffffff !important;
+    border-color: #0f2038 !important;
+    box-shadow: 0 4px 12px -2px rgba(15, 32, 56, 0.25) !important;
+  }
+  .tab-btn.inactive-tab {
+    background-color: #ffffff !important;
+    color: #475569 !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .tab-btn.inactive-tab:hover {
+      background-color: #f8fafc !important;
+      color: #0f2038 !important;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-slate-50 text-slate-700 antialiased">
+
+<!-- =================== HEADER =================== -->
+<header class="sticky top-0 z-50 bg-slate-50/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 md:h-24 flex items-center justify-between">
+
+    <!-- Logo ajustado -->
+    <a href="#topo" class="flex items-center">
+      <img src="./logo.png" alt="Willon Sites" class="h-10 md:h-14 w-auto object-contain">
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <a href="#modelos" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Modelos</a>
+      <a href="#google-meu-negocio" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Google Meu Negócio</a>
+      <a href="#como-funciona" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Como funciona</a>
+      <a href="#vantagens" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Vantagens</a>
+      <a href="#depoimentos" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Depoimentos</a>
+      <a href="#faq" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Dúvidas</a>
+    </nav>
+
+    <!-- CTA WhatsApp -->
+    <a
+      href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Quero%20conhecer%20os%20modelos%20de%20site%20da%20Willon%20Sites."
+      target="_blank" rel="noopener noreferrer"
+      class="btn-pulse inline-flex items-center gap-2 rounded-full bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white text-sm md:text-base font-semibold px-4 py-2.5 md:px-5 md:py-3 shadow-soft transition-all duration-200 ease-in-out"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 md:h-5 md:w-5 fill-current"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
+      Fale no WhatsApp
+    </a>
+  </div>
+</header>
+<main id="topo">
+
+  <!-- =================== HERO =================== -->
+  <section class="relative overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+      <div class="hero-glow absolute -top-24 left-1/4 h-[26rem] w-[26rem] rounded-full blur-3xl"></div>
+      <div class="hero-glow-secondary absolute top-1/3 -right-16 h-[22rem] w-[22rem] rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 md:pt-24 pb-16 md:pb-28 grid md:grid-cols-2 gap-12 md:gap-8 items-center">
+
+      <!-- Texto -->
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full bg-navy-50 text-navy-700 text-xs font-semibold px-3.5 py-1.5 mb-6 border border-navy-100/60 shadow-sm">
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-green"></span>
+          R$ 500,00 pagamento único · sem mensalidade
         </span>
-        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
-          Destaque seu negócio no Google e atraia clientes da sua região todos os dias
-        </h2>
-        <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed">
-          Quando alguém pesquisa pelo seu serviço no bairro, quem aparece primeiro: <strong class="text-slate-800">você ou o seu concorrente?</strong> Nós estruturamos e otimizamos o seu <strong>Google Perfil da Empresa</strong> para colocar o seu negócio no mapa.
+
+        <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-[1.2] sm:leading-[1.18]">
+          Seu comércio aberto 24h na internet.
+          <span class="inline-block bg-brand-blue text-white px-2.5 sm:px-3 py-0.5 rounded-lg shadow-sm align-baseline my-1">Sites profissionais</span> entregues em poucos dias.
+        </h1>
+
+        <p class="mt-6 text-base md:text-lg text-slate-600 leading-relaxed max-w-xl">
+          Modelos prontos e validados para clínicas, advogados, contadores, salões de beleza e outros negócios locais que precisam de presença profissional agora.
+          Você paga <strong class="text-slate-800">uma única vez</strong> — sem taxa de manutenção, sem mensalidade de hospedagem.
+          O único custo recorrente é a anuidade do seu domínio.
         </p>
-      </div>
 
-      <!-- BLOCO 1: O Risco de um Perfil Incompleto vs Perfil Profissional -->
-      <div class="grid lg:grid-cols-2 gap-8 mb-16">
-        
-        <!-- Card Negativo: O Perigo -->
-        <div class="rounded-2xl bg-white border border-red-200/80 p-6 md:p-8 shadow-card flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-3 mb-5">
-              <span class="h-10 w-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold text-lg">⚠️</span>
-              <h3 class="font-display text-lg md:text-xl font-bold text-slate-900">O perigo de um perfil abandonado</h3>
-            </div>
-            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-              Um perfil sem verificação, com horários desatualizados ou sem fotos profissionais afasta clientes qualificados antes mesmo do primeiro contato.
-            </p>
-            <ul class="space-y-3.5 text-sm text-slate-600">
-              <li class="flex items-start gap-2.5">
-                <span class="text-red-500 font-bold shrink-0">✕</span>
-                <span>Clientes indo até o endereço em horários errados ou encontrando o comércio fechado.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-red-500 font-bold shrink-0">✕</span>
-                <span>Falta de avaliações recentes que faz o cliente desconfiar e escolher o concorrente.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-red-500 font-bold shrink-0">✕</span>
-                <span>Invisibilidade nas pesquisas de proximidade (<em>"perto de mim"</em>).</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-5 border-t border-slate-100 text-xs font-semibold text-red-600">
-            📉 Perda diária de clientes prontos para comprar no seu bairro.
-          </div>
-        </div>
-
-        <!-- Card Positivo: Oportunidade -->
-        <div class="rounded-2xl bg-white border border-emerald-200/80 p-6 md:p-8 shadow-card flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-3 mb-5">
-              <span class="h-10 w-10 rounded-xl bg-emerald-50 text-brand-green flex items-center justify-center font-bold text-lg">🚀</span>
-              <h3 class="font-display text-lg md:text-xl font-bold text-slate-900">O poder de um perfil 100% otimizado</h3>
-            </div>
-            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-              Sua ficha comercial configurada estrategicamente para aparecer no topo das pesquisas locais do Google e nas rotas do Google Maps.
-            </p>
-            <ul class="space-y-3.5 text-sm text-slate-600">
-              <li class="flex items-start gap-2.5">
-                <svg class="h-5 w-5 text-brand-green shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span><strong>Primeiras posições no Google Maps</strong> quando buscam pelo seu serviço ou produto na sua cidade.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="h-5 w-5 text-brand-green shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span><strong>Botões de ação imediata:</strong> ligação direta, trajeto no GPS e chamada no WhatsApp em 1 clique.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="h-5 w-5 text-brand-green shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span><strong>Autoridade e confiança:</strong> exibição de fotos profissionais, catálogo e selo oficial verificado.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-5 border-t border-slate-100 text-xs font-semibold text-brand-greenDark">
-            📈 Mais ligações, mensagens e visitas físicas à sua porta.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BLOCO 2: Os 4 Pilares de Otimização Estratégica -->
-      <div class="mb-16">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs font-semibold uppercase tracking-wider text-brand-blue">O que nós fazemos</span>
-          <h3 class="font-display text-xl md:text-2xl font-bold text-slate-900 mt-1">
-            Configuração completa feita por especialistas
-          </h3>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-card hover:shadow-soft hover:-translate-y-1 transition-all duration-200">
-            <div class="h-12 w-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl font-bold mb-4">
-              📍
-            </div>
-            <h4 class="font-display font-semibold text-slate-900 text-base">Posicionamento Local</h4>
-            <p class="mt-2 text-xs md:text-sm text-slate-600 leading-relaxed">
-              Definição correta das categorias principais e secundárias, raio de atendimento e palavras-chave de busca no Google.
-            </p>
-          </div>
-
-          <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-card hover:shadow-soft hover:-translate-y-1 transition-all duration-200">
-            <div class="h-12 w-12 rounded-xl bg-emerald-50 text-brand-green flex items-center justify-center text-xl font-bold mb-4">
-              ⭐
-            </div>
-            <h4 class="font-display font-semibold text-slate-900 text-base">Estratégia de Avaliações</h4>
-            <p class="mt-2 text-xs md:text-sm text-slate-600 leading-relaxed">
-              Geração de link curto exclusivo para clientes avaliarem com 5 estrelas e instruções para respostas profissionais.
-            </p>
-          </div>
-
-          <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-card hover:shadow-soft hover:-translate-y-1 transition-all duration-200">
-            <div class="h-12 w-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold mb-4">
-              📸
-            </div>
-            <h4 class="font-display font-semibold text-slate-900 text-base">Catálogo & Fotos</h4>
-            <p class="mt-2 text-xs md:text-sm text-slate-600 leading-relaxed">
-              Organização de produtos, fotos do espaço, logotipo em alta resolução e menus/tabelas de serviços estruturados.
-            </p>
-          </div>
-
-          <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-card hover:shadow-soft hover:-translate-y-1 transition-all duration-200">
-            <div class="h-12 w-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
-              🌐
-            </div>
-            <h4 class="font-display font-semibold text-slate-900 text-base">Integração com o Site</h4>
-            <p class="mt-2 text-xs md:text-sm text-slate-600 leading-relaxed">
-              Conexão do perfil ao seu novo site profissional, potencializando a relevância e o ranqueamento orgânico de ambos.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- BLOCO 3: Banner de Conversão (Combo ou Serviço Avulso) -->
-      <div class="rounded-2xl bg-navy-800 text-white p-8 md:p-12 shadow-soft flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div class="max-w-2xl text-center lg:text-left">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-green/20 text-brand-green text-xs font-semibold px-3 py-1 mb-3">
-            ✨ Oportunidade para o seu comércio
-          </span>
-          <h3 class="font-display text-2xl md:text-3xl font-bold leading-snug">
-            Combine seu Site Profissional com o Google Meu Negócio
-          </h3>
-          <p class="mt-3 text-sm md:text-base text-navy-100/80 leading-relaxed">
-            Tenha uma presença digital 360°: seu comércio com site no ar e visível para quem procura no Google Maps da sua região. Fale conosco e monte seu pacote completo.
-          </p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row lg:flex-col shrink-0 gap-3 w-full sm:w-auto">
-          <a href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Quero%20otimizar%20meu%20Google%20Meu%20Neg%C3%B3cio%20junto%20com%20o%20site."
-             target="_blank" rel="noopener noreferrer"
-             class="btn-pulse inline-flex justify-center items-center gap-2 rounded-xl bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white font-semibold px-7 py-4 shadow-soft transition-all duration-200 ease-in-out text-sm md:text-base text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-5 w-5 fill-current"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
-            Contratar Google Meu Negócio
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#modelos" class="inline-flex justify-center items-center rounded-xl bg-brand-blue hover:bg-blue-700 hover:scale-105 hover:shadow-soft text-white font-semibold px-6 py-3.5 shadow-soft transition-all duration-200 ease-in-out">
+            Ver Modelos Prontos
           </a>
+          <a href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20os%20sites%20da%20Willon%20Sites."
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex justify-center items-center gap-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 hover:scale-105 text-slate-700 font-semibold px-6 py-3.5 transition-all duration-200 ease-in-out">
+            Falar com um especialista
+          </a>
+        </div>
+
+        <!-- Micro-prova Social Estratégica -->
+        <div class="mt-5 flex items-center gap-3">
+          <div class="flex items-center gap-0.5 text-amber-400">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-slate-700">
+            <strong>4.9 no Google</strong> <span class="text-slate-300 mx-1">|</span> +150 sites entregues
+          </span>
+        </div>
+
+        <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
+          <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Sem mensalidade</span>
+          <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Entrega rápida</span>
+          <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Otimizado para Google</span>
+        </div>
+      </div>
+
+      <!-- Mockup com Imagem Real e Bordas Arredondadas -->
+      <div class="relative flex justify-center items-center">
+        <div class="absolute -inset-6 bg-navy-100/60 rounded-[2.5rem] blur-2xl -z-10"></div>
+        <img 
+          src="./hero-mockup.png" 
+          alt="Exemplo de site profissional no computador e celular" 
+          class="animate-float w-full max-w-lg md:max-w-none h-auto object-contain rounded-3xl drop-shadow-2xl"
+        />
+        <!-- Selo flutuante de autoridade -->
+        <div class="hidden sm:flex absolute -bottom-3 -left-3 items-center gap-2 rounded-xl bg-white shadow-card border border-slate-200 px-4 py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-brand-green"></span>
+          <span class="text-xs font-semibold text-slate-700">⚡ Entrega em até 5 dias úteis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== COMO FUNCIONA =================== -->
+  <section id="como-funciona" class="bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Simples assim</span>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Como funciona</h2>
+        <p class="mt-3 text-slate-600">Três passos, sem burocracia e sem termos técnicos.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 md:gap-6">
+        <div class="relative">
+          <span class="font-display text-5xl font-extrabold text-navy-100">01</span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 mt-2">Escolha o modelo</h3>
+          <p class="mt-2 text-slate-600 leading-relaxed">Veja a vitrine de sites prontos e escolha o que melhor combina com o seu negócio.</p>
+        </div>
+        <div class="relative">
+          <span class="font-display text-5xl font-extrabold text-navy-100">02</span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 mt-2">Envie fotos e textos</h3>
+          <p class="mt-2 text-slate-600 leading-relaxed">Você nos envia as informações do seu negócio: fotos, endereço, horários e contato.</p>
+        </div>
+        <div class="relative">
+          <span class="font-display text-5xl font-extrabold text-navy-100">03</span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 mt-2">Site no ar</h3>
+          <p class="mt-2 text-slate-600 leading-relaxed">Nós cuidamos de toda a configuração e publicamos o seu site pronto para atrair clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== VITRINE DE MODELOS (SISTEMA DE ABAS EM GRADE ABERTA) =================== -->
+  <section id="modelos" class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+      <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Vitrine</span>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Modelos prontos para o seu negócio</h2>
+      <p class="mt-3 text-slate-600">Escolha o seu segmento abaixo e veja as 6 opções disponíveis. O valor do modelo escolhido sai por <strong class="text-slate-900">R$ 500,00</strong>, pagamento único.</p>
+    </div>
+
+    <!-- Botões das Abas -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button onclick="switchTab('tab-servicos', this)" class="tab-btn active-tab font-semibold px-6 py-3 rounded-full">
+        🛠️ Serviços
+      </button>
+      <button onclick="switchTab('tab-saude', this)" class="tab-btn inactive-tab font-semibold px-6 py-3 rounded-full">
+        🩺 Saúde e Bem-Estar
+      </button>
+      <button onclick="switchTab('tab-comercio', this)" class="tab-btn inactive-tab font-semibold px-6 py-3 rounded-full">
+        🏪 Comércio Local
+      </button>
+    </div>
+
+    <!-- Container do Conteúdo das Abas -->
+    <div>
+      
+      <!-- ABA 1: SERVIÇOS (GRADE ABERTA 3x2) -->
+      <div id="tab-servicos" class="tab-content animate-fade-tab">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1: Modelo Confiança 1 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-navy-50">
+                  <img 
+                    src="./miniatura-confianca1.webp" 
+                    alt="Prévia do Modelo Confiança" 
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Focado em posicionar sua empresa no Google. Ideal para oficinas, assistências técnicas e prestadores de serviços. Destaca sua especialidade e facilita o contato imediato do cliente.
+              </p>
+              <a href="https://willon-sites-modelo-confianca1.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Modelo Confiança 2 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-indigo-50">
+                  <img 
+                    src="./miniatura-confianca2.webp" 
+                    alt="Prévia do Modelo Confiança 2 - Instalações Elétricas" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 2</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Design técnico e claro voltado para eletricistas, instaladores e manutenção residencial. Transmite segurança com foco em laudo, garantia por escrito e chamadas de plantão.
+              </p>
+              <a href="https://willon-sites-modelo-confianca2.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Modelo Confiança 3 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-sky-50">
+                  <img 
+                    src="./miniatura-confianca3.webp" 
+                    alt="Prévia do Modelo Confiança 3 - Desentupidora & Serviços Hidráulicos" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 3</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Estrutura de alta urgência para desentupidoras, caça-vazamentos e encanadores. Foco em atendimento 24h, chegada rápida e contato imediato por WhatsApp ou ligação.
+              </p>
+              <a href="https://willon-sites-modelo-confianca3.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Modelo Confiança 4 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-cyan-50">
+                  <img 
+                    src="./miniatura-confianca4.webp" 
+                    alt="Prévia do Modelo Confiança 4 - Barbearia & Estilo Masculino" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 4</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Visual premium e refinado para barbearias e estúdios masculinos. Apresenta tabela de serviços, fotos da equipe, cortes em destaque e agendamento direto de horário via WhatsApp.
+              </p>
+              <a href="https://willon-sites-modelo-confianca4.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 5: Modelo Confiança 5 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-slate-100">
+                  <img 
+                    src="./miniatura-confianca5.webp" 
+                    alt="Prévia do Modelo Confiança 5 - Contabilidade Corporativa" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 5</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Layout B2B elegante para escritórios contábeis. Transmite autoridade, confiança tributária e facilita a captação de empresas que buscam assessoria contábil inteligente.
+              </p>
+              <a href="https://willon-sites-modelo-confianca5.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 6: Modelo Confiança 6 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-gray-100">
+                  <img 
+                    src="./miniatura-confianca6.webp" 
+                    alt="Prévia do Modelo Confiança 6 - Advocacia Empresarial" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Confiança 6</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Banca jurídica de alto padrão. Foco em blindagem patrimonial, direito tributário e societário, com um visual executivo, sóbrio e agendamento de consultas.
+              </p>
+              <a href="https://willon-sites-modelo-confianca6.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navegação rápida de rodapé da vitrine -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            Explorar outras categorias:
+          </p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+              🛠️ Serviços
+            </button>
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🩺 Saúde e Bem-Estar
+            </button>
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🏪 Comércio Local
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABA 2: SAÚDE E BEM-ESTAR (GRADE ABERTA 3x2) -->
+      <div id="tab-saude" class="tab-content hidden animate-fade-tab">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1: Modelo Agenda 1 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-emerald-50">
+                  <img 
+                    src="./miniatura-agenda1.webp" 
+                    alt="Prévia do Modelo Agenda" 
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Estrutura desenvolvida para treinadores, clínicas e estúdios. Design limpo e profissional com foco total em converter visitantes em alunos ou pacientes diretamente no seu WhatsApp.
+              </p>
+              <a href="https://willon-sites-modelo-agenda1.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Modelo Agenda 2 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-cyan-50">
+                  <img 
+                    src="./miniatura-agenda2.webp" 
+                    alt="Prévia do Modelo Agenda 2 - Odontologia Especializada" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 2</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Desenvolvido para dentistas, clínicas médicas e consultórios. Design sofisticado e confiável para destacar procedimentos, corpo clínico e agendamento de consultas.
+              </p>
+              <a href="https://willon-sites-modelo-agenda-2.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Modelo Agenda 3 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-teal-50">
+                  <img 
+                    src="./miniatura-agenda3.webp" 
+                    alt="Prévia do Modelo Agenda 3 - Psicologia & Terapia" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 3</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Layout acolhedor e humanizado para psicólogos, terapeutas e psicanalistas. Transmite segurança, sigilo profissional e foco em consultas presencial ou online.
+              </p>
+              <a href="https://willon-sites-modelo-agenda3.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Modelo Agenda 4 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-rose-50">
+                  <img 
+                    src="./miniatura-agenda4.webp" 
+                    alt="Prévia do Modelo Agenda 4 - Nutrição Clínica e Emagrecimento" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 4</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Focado em nutricionistas e clínicas de emagrecimento saudável. Apresenta programas nutricionais, acompanhamento individual, histórias de superação e agendamento de consultas.
+              </p>
+              <a href="https://willon-sites-modelo-agenda4.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 5: Modelo Agenda 5 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-green-50">
+                  <img 
+                    src="./miniatura-agenda5.webp" 
+                    alt="Prévia do Modelo Agenda 5 - Nutrição Clínica" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 5</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Página humanizada para nutricionistas e coaches de saúde. Destaca a metodologia sem dietas radicais, programas de reeducação alimentar e agendamento direto pelo WhatsApp.
+              </p>
+              <a href="https://willon-sites-modelo-agenda5.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 6: Modelo Agenda 6 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-stone-50">
+                  <img 
+                    src="./miniatura-agenda6.webp" 
+                    alt="Prévia do Modelo Agenda 6 - Fisioterapia e Pilates" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Agenda 6</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Ambiente iluminado focado em reabilitação e bem-estar. Perfeito para estúdios de Pilates clássico e fisioterapia postural, apresentando as modalidades do estúdio.
+              </p>
+              <a href="https://willon-sites-modelo-agenda6.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navegação rápida de rodapé da vitrine -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            Explorar outras categorias:
+          </p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🛠️ Serviços
+            </button>
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+              🩺 Saúde e Bem-Estar
+            </button>
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🏪 Comércio Local
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABA 3: COMÉRCIO LOCAL (GRADE ABERTA 3x2) -->
+      <div id="tab-comercio" class="tab-content hidden animate-fade-tab">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1: Modelo Vitrine 1 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-emerald-950">
+                  <img 
+                    src="./miniatura-vitrine1.webp" 
+                    alt="Prévia do Modelo Vitrine 1 - Empório Natural e Produtos a Granel" 
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Visual orgânico e premium para empórios, lojas de produtos a granel e alimentos saudáveis. Destaque para catálogo de itens frescos, quebra de objeções e montagem de pedidos no WhatsApp.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine1.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Modelo Vitrine 2 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-stone-900">
+                  <img 
+                    src="./miniatura-vitrine2.webp" 
+                    alt="Prévia do Modelo Vitrine 2 - Hamburgueria & Delivery" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 2</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Visual moderno no estilo dark gourmet para hamburguerias e lanchonetes. Cardápio digital atrativo com botões de pedido direto para o WhatsApp do delivery.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine2.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Modelo Vitrine 3 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-emerald-950">
+                  <img 
+                    src="./miniatura-vitrine3.webp" 
+                    alt="Prévia do Modelo Vitrine 3 - Restaurante & Alta Gastronomia" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 3</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Layout sofisticado para restaurantes, bistrôs e alta gastronomia. Apresenta pratos autorais, carta de vinhos selecionada e canal rápido para reservas de mesa no WhatsApp.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine3.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Modelo Vitrine 4 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-yellow-50">
+                  <img 
+                    src="./miniatura-vitrine4.webp" 
+                    alt="Prévia do Modelo Vitrine 4 - Clínica Veterinária & Pet Shop" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 4</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Visual acolhedor para clínicas veterinárias e pet shops. Destaque para pacotes de banho e tosa, consultas com especialistas, fotos do espaço e agendamento de horários.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine4.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 5: Modelo Vitrine 5 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-amber-50">
+                  <img 
+                    src="./miniatura-vitrine5.webp" 
+                    alt="Prévia do Modelo Vitrine 5 - Cafeteria Gourmet" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 5</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Design charmoso e aconchegante para cafés, confeitarias e docerias. Exiba seu cardápio, seu ambiente e atraia a vizinhança para uma experiência saborosa no local.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine5.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 6: Modelo Vitrine 6 -->
+          <article class="group flex flex-col rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-soft hover:-translate-y-2 transition-all duration-300">
+            <div class="rounded-t-xl overflow-hidden border-b border-slate-200">
+              <div class="flex items-center gap-1.5 bg-slate-100 px-3 py-2">
+                <span class="h-2 w-2 rounded-full bg-red-300"></span>
+                <span class="h-2 w-2 rounded-full bg-yellow-300"></span>
+                <span class="h-2 w-2 rounded-full bg-green-300"></span>
+              </div>
+              <div class="overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden bg-rose-50">
+                  <img 
+                    src="./miniatura-vitrine6.webp" 
+                    alt="Prévia do Modelo Vitrine 6 - Floricultura e Ateliê Botânico" 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="font-display text-lg font-semibold text-slate-900">Modelo Vitrine 6</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                Layout alegre, vibrante e colorido. Perfeito para a venda de buquês, arranjos e cestas de presente, com catálogo de produtos e chamadas para entregas no mesmo dia.
+              </p>
+              <a href="https://willon-sites-modelo-vitrine6.netlify.app"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-5 inline-flex justify-center items-center rounded-lg bg-navy-800 hover:bg-navy-700 hover:scale-105 text-white text-sm font-semibold px-4 py-3 transition-all duration-200 ease-in-out">
+                Ver site ao vivo
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navegação rápida de rodapé da vitrine -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            Explorar outras categorias:
+          </p>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🛠️ Serviços
+            </button>
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+              🩺 Saúde e Bem-Estar
+            </button>
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+              🏪 Comércio Local
+            </button>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- =================== GOOGLE MEU NEGÓCIO =================== -->
+  <section id="google-meu-negocio" class="bg-slate-100/70 border-y border-slate-200 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="inline-flex items-center gap-2 rounded-full bg-navy-50 text-navy-700 text-xs font-semibold px-3.5 py-1.5 mb-3 border border-navy-100/60 shadow-sm">
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-blue"></span>
+          Presença Local Completa
+        </span>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-2">
+          Seja Encontrado por Quem Procura no Seu Bairro
+        </h2>
+        <p class="mt-3 text-slate-600 leading-relaxed">
+          Estruturamos e otimizamos o seu <strong>Perfil da Empresa no Google (Google Meu Negócio)</strong> para colocar sua loja, clínica ou serviço no topo do Google Maps e das buscas locais.
+        </p>
+      </div>
+
+      <!-- Grade de Benefícios / Entregáveis -->
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+        <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col justify-between hover:shadow-soft transition-shadow duration-300">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center mb-5 text-xl font-bold">
+              📍
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Destaque no Google Maps</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Configuração completa de endereço, raio de atendimento, rotas de GPS e botões de chamada rápida para clientes próximos encontrarem seu negócio na hora.
+            </p>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col justify-between hover:shadow-soft transition-shadow duration-300">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-50 text-brand-green flex items-center justify-center mb-5 text-xl font-bold">
+              ⭐
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Autoridade e Avaliações</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Organização de categorias estratégicas, produtos, fotos em alta resolução e orientação prática para coletar avaliações 5 estrelas que geram confiança imediata.
+            </p>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col justify-between hover:shadow-soft transition-shadow duration-300">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 text-xl font-bold">
+              🔗
+            </div>
+            <h3 class="font-display text-lg font-bold text-slate-900">Integração Total com seu Site</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Conexão direta entre seu perfil e o seu novo site profissional, potencializando a autoridade e o posicionamento orgânico de ambas as ferramentas no Google.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner de Ação -->
+      <div class="rounded-2xl bg-white border border-slate-200 shadow-card p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <h3 class="font-display text-xl font-bold text-slate-900">Quer atrair mais clientes pelo Google da sua região?</h3>
+          <p class="mt-1 text-sm md:text-base text-slate-600">Peça seu site com o Perfil da Empresa configurado e pronto para receber contatos.</p>
+        </div>
+        <a href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Google%20Meu%20Neg%C3%B3cio%20e%20os%20sites."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-pulse inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white font-semibold px-6 py-3.5 shadow-soft transition-all duration-200 ease-in-out text-sm md:text-base">
+          Falar sobre Google Meu Negócio
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================== VANTAGENS =================== -->
+  <section id="vantagens" class="bg-navy-800">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="text-xs font-semibold tracking-wide text-brand-green uppercase">Por que Willon Sites</span>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-3">Feito para durar, sem pesar no seu bolso</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+        <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green mb-4">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0-10v1m0 9v1"/><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="font-display text-white font-semibold">Pagamento único</h3>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Você paga uma vez pelo site, apenas <strong class="text-white font-semibold">R$ 500,00</strong>. Sem taxa mensal de manutenção, sem surpresas na fatura.</p>
+        </div>
+
+        <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green mb-4">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </span>
+          <h3 class="font-display text-white font-semibold">Carregamento rápido</h3>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Sites leves e otimizados, que carregam rápido e ajudam seu negócio a ser bem avaliado pelo Google.</p>
+        </div>
+
+        <div class="rounded-xl bg-navy-700/60 border border-navy-600 p-6">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/15 text-brand-green mb-4">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <h3 class="font-display text-white font-semibold">Sem mensalidade de hospedagem</h3>
+          <p class="mt-2 text-sm text-navy-100/80 leading-relaxed">Seu site fica no ar sem custo de hospedagem. Você só arca com a anuidade do seu domínio próprio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== DEPOIMENTOS =================== -->
+  <section id="depoimentos" class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+      <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Avaliações</span>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Quem comprou, recomenda</h2>
+      <p class="mt-3 text-slate-600">Comerciantes e prestadores de serviços que transformaram a sua presença na internet.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      
+      <!-- Depoimento 1 -->
+      <div class="rounded-2xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            "Excelente custo-benefício. Em 3 dias o site da minha clínica estava no ar, rápido e lindo. Os pacientes sempre elogiam a facilidade de agendamento pelo WhatsApp."
+          </p>
+        </div>
+        <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
+          <div class="h-10 w-10 rounded-full bg-navy-100 text-navy-800 font-bold flex items-center justify-center text-sm">
+            DR
+          </div>
+          <div>
+            <p class="font-display font-bold text-slate-900 text-sm">Dr. Roberto Mendes</p>
+            <p class="text-xs text-slate-500">Clínica Odontológica · São Paulo</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="rounded-2xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            "Não ter que pagar mensalidade foi o diferencial para mim. O investimento único de R$ 500 se pagou no primeiro mês com novos clientes que chegaram pelo Google."
+          </p>
+        </div>
+        <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
+          <div class="h-10 w-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">
+            CF
+          </div>
+          <div>
+            <p class="font-display font-bold text-slate-900 text-sm">Carlos Ferreira</p>
+            <p class="text-xs text-slate-500">Oficina Mecânica · Santo André</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 3 -->
+      <div class="rounded-2xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            "Processo super transparente e ágil. Passei meus textos e fotos, e a equipe da Willon Sites entregou tudo pronto e configurado. Recomendo muito!"
+          </p>
+        </div>
+        <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
+          <div class="h-10 w-10 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-sm">
+            PA
+          </div>
+          <div>
+            <p class="font-display font-bold text-slate-900 text-sm">Patrícia Alencar</p>
+            <p class="text-xs text-slate-500">Boutique de Roupas · Osasco</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================== FAQ =================== -->
+  <section id="faq" class="max-w-3xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="text-center mb-10 md:mb-14">
+      <span class="text-xs font-semibold tracking-wide text-brand-blue uppercase">Dúvidas</span>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mt-3">Perguntas frequentes</h2>
+    </div>
+
+    <div class="space-y-3">
+      <details class="group rounded-xl bg-white border border-slate-200 shadow-card open:shadow-soft transition-shadow duration-300 ease-in-out" open>
+        <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 md:px-6 md:py-5 font-display font-semibold text-slate-900">
+          Tenho que pagar mensalidade?
+          <span class="faq-icon shrink-0 h-6 w-6 rounded-full bg-navy-50 text-navy-700 flex items-center justify-center text-lg leading-none transition-transform duration-200 ease-in-out">+</span>
+        </summary>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-slate-600 leading-relaxed">
+          Não. O pagamento do site é único (R$ 500,00). O único custo recorrente é a anuidade do seu domínio próprio (o endereço do seu site, ex: seunegocio.com.br), que é pago diretamente ao registrador do domínio.
+        </div>
+      </details>
+
+      <details class="group rounded-xl bg-white border border-slate-200 shadow-card open:shadow-soft transition-shadow duration-300 ease-in-out">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 md:px-6 md:py-5 font-display font-semibold text-slate-900">
+          Como funciona a hospedagem?
+          <span class="faq-icon shrink-0 h-6 w-6 rounded-full bg-navy-50 text-navy-700 flex items-center justify-center text-lg leading-none transition-transform duration-200 ease-in-out">+</span>
+        </summary>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-slate-600 leading-relaxed">
+          Utilizamos uma arquitetura moderna de hospedagem gratuita, rápida e confiável. Isso significa que seu site fica no ar sem que você precise pagar taxas de servidor todo mês.
+        </div>
+      </details>
+
+      <details class="group rounded-xl bg-white border border-slate-200 shadow-card open:shadow-soft transition-shadow duration-300 ease-in-out">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 md:px-6 md:py-5 font-display font-semibold text-slate-900">
+          Posso mudar as cores?
+          <span class="faq-icon shrink-0 h-6 w-6 rounded-full bg-navy-50 text-navy-700 flex items-center justify-center text-lg leading-none transition-transform duration-200 ease-in-out">+</span>
+        </summary>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-slate-600 leading-relaxed">
+          Sim. Adaptamos as cores, a logo e as fontes do modelo escolhido para combinar com a identidade da sua marca, sem alterar o valor do pagamento único.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- =================== CTA FINAL =================== -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-16 md:pb-24">
+    <div class="rounded-2xl bg-gradient-to-br from-navy-800 to-navy-700 px-6 py-12 md:px-16 md:py-16 text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-white">Pronto para colocar seu negócio na internet?</h2>
+      <p class="mt-3 text-navy-100/80 max-w-xl mx-auto">Fale agora com a Willon Sites e escolha o modelo ideal para o seu comércio.</p>
+      <a href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Quero%20colocar%20meu%20neg%C3%B3cio%20na%20internet%20com%20a%20Willon%20Sites."
+         target="_blank" rel="noopener noreferrer"
+         class="btn-pulse mt-7 inline-flex items-center gap-2 rounded-xl bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white font-semibold px-7 py-3.5 shadow-soft transition-all duration-200 ease-in-out">
+        Falar no WhatsApp agora
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="bg-navy-900 text-navy-100/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 md:py-14 flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+
+    <div class="text-center md:text-left">
+      <!-- Logo com fundo protegido para o rodapé escuro -->
+      <a href="#topo" class="inline-flex items-center bg-white/95 rounded-lg px-2.5 py-1">
+        <img src="./logo.png" alt="Willon Sites" class="h-7 w-auto object-contain">
+      </a>
+      <p class="mt-3 text-sm max-w-xs">Sites prontos e otimizados para o comércio local. Pagamento único, sem mensalidade.</p>
+    </div>
+
+    <div class="flex flex-col items-center md:items-start gap-2 text-sm">
+      <span class="text-white font-semibold mb-1">Contato</span>
+      <a href="https://wa.me/5511963907597" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200 ease-in-out">(11) 96390-7597</a>
+      <a href="mailto:contato@willonsites.com.br" class="hover:text-white transition-colors duration-200 ease-in-out">contato@willonsites.com.br</a>
+      <a href="#modelos" class="hover:text-white transition-colors duration-200 ease-in-out">Modelos de site</a>
+    </div>
+
+  </div>
+  <div class="border-t border-white/10">
+    <p class="max-w-7xl mx-auto px-5 sm:px-8 py-5 text-center text-xs text-navy-100/50">
+      &copy; <span id="ano-atual">2026</span> Willon Sites. Todos os direitos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp (mobile) -->
+<a href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20sites%20da%20Willon%20Sites."
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Falar no WhatsApp"
+   class="btn-pulse md:hidden fixed bottom-5 right-5 z-50 flex items-center justify-center h-14 w-14 rounded-full bg-brand-green shadow-soft transition-transform duration-200 ease-in-out hover:scale-110">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-7 w-7 fill-white"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
+</a>
+
+<script>
+  // Ano dinâmico atualizado
+  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+  // Função para controlar a troca de abas (Tabs) na vitrine
+  function switchTab(tabId, clickedBtn) {
+    // 1. Esconder todo o conteúdo das abas
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(tab => {
+      tab.classList.add('hidden');
+    });
+
+    // 2. Resetar todos os botões do topo para inativo
+    const buttons = document.querySelectorAll('#modelos .tab-btn');
+    buttons.forEach(btn => {
+      btn.classList.remove('active-tab');
+      btn.classList.add('inactive-tab');
+    });
+
+    // 3. Mostrar apenas o conteúdo da aba clicada
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+      activeTab.classList.remove('hidden');
+    }
+
+    // 4. Sincronizar o botão ativo no topo
+    const tabIndexMap = {
+      'tab-servicos': 0,
+      'tab-saude': 1,
+      'tab-comercio': 2
+    };
+    if (buttons[tabIndexMap[tabId]]) {
+      buttons[tabIndexMap[tabId]].classList.remove('inactive-tab');
+      buttons[tabIndexMap[tabId]].classList.add('active-tab');
+    }
+  }
+
+  // Alterna a aba e reposiciona suavemente no topo da vitrine de modelos
+  function switchTabAndScroll(tabId, clickedBtn) {
+    switchTab(tabId, clickedBtn);
+    const modelosSection = document.getElementById('modelos');
+    if (modelosSection) {
+      modelosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
+
+</body>
+</html>
