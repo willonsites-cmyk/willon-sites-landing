@@ -171,15 +171,47 @@
       <a href="#faq" class="relative hover:text-navy-800 transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-blue after:transition-all after:duration-200 hover:after:w-full">Dúvidas</a>
     </nav>
 
-    <!-- CTA WhatsApp -->
-    <a
-      href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Quero%20conhecer%20os%20modelos%20de%20site%20da%20Willon%20Sites."
-      target="_blank" rel="noopener noreferrer"
-      class="btn-pulse inline-flex items-center gap-2 rounded-full bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white text-sm md:text-base font-semibold px-4 py-2.5 md:px-5 md:py-3 shadow-soft transition-all duration-200 ease-in-out"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 md:h-5 md:w-5 fill-current"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
-      Fale no WhatsApp
-    </a>
+    <!-- Área Direita: Botão WhatsApp + Botão Hambúrguer Mobile -->
+    <div class="flex items-center gap-3">
+      <!-- CTA WhatsApp -->
+      <a
+        href="https://wa.me/5511963907597?text=Ol%C3%A1!%20Quero%20conhecer%20os%20modelos%20de%20site%20da%20Willon%20Sites."
+        target="_blank" rel="noopener noreferrer"
+        class="btn-pulse inline-flex items-center gap-2 rounded-full bg-brand-green hover:bg-brand-greenDark hover:scale-105 text-white text-xs sm:text-sm md:text-base font-semibold px-3.5 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 shadow-soft transition-all duration-200 ease-in-out"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 md:h-5 md:w-5 fill-current"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.612 1.917 6.484L4 29l7.71-1.876A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.575 1.113 1.15-4.46-.232-.367A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.819-9.818S25.82 9.58 25.82 15s-4.4 9.818-9.819 9.818Zm5.42-7.35c-.297-.149-1.755-.866-2.027-.965-.272-.099-.47-.148-.669.15-.198.297-.767.964-.94 1.163-.173.198-.347.223-.644.074-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.15-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.073.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.755-.718 2.002-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347Z"/></svg>
+        <span class="hidden xs:inline">Fale no </span>WhatsApp
+      </a>
+
+      <!-- Botão Hambúrguer (Visível apenas no mobile) -->
+      <button 
+        id="btn-menu-mobile"
+        type="button" 
+        onclick="toggleMenuMobile()"
+        aria-label="Abrir Menu de Navegação" 
+        class="md:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 shadow-sm hover:bg-slate-100 transition-colors"
+      >
+        <svg id="icon-menu-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="icon-menu-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Menu Mobile Desdobrável (Gaveta Superior) -->
+  <div id="menu-mobile" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-6 py-5 transition-all">
+    <nav class="flex flex-col gap-4 text-base font-semibold text-slate-700">
+      <a href="#modelos" onclick="closeMenuMobile()" class="py-2 border-b border-slate-100 hover:text-brand-blue transition-colors">Modelos</a>
+      <a href="#google-meu-negocio" onclick="closeMenuMobile()" class="py-2 border-b border-slate-100 hover:text-brand-blue transition-colors">Google Meu Negócio</a>
+      <a href="#como-funciona" onclick="closeMenuMobile()" class="py-2 border-b border-slate-100 hover:text-brand-blue transition-colors">Como funciona</a>
+      <a href="#vantagens" onclick="closeMenuMobile()" class="py-2 border-b border-slate-100 hover:text-brand-blue transition-colors">Vantagens</a>
+      <a href="#depoimentos" onclick="closeMenuMobile()" class="py-2 border-b border-slate-100 hover:text-brand-blue transition-colors">Depoimentos</a>
+      <a href="#faq" onclick="closeMenuMobile()" class="py-2 hover:text-brand-blue transition-colors">Dúvidas</a>
+    </nav>
   </div>
 </header>
 <main id="topo">
@@ -950,10 +982,10 @@
             <button onclick="switchTabAndScroll('tab-servicos', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
               🛠️ Serviços
             </button>
-            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
+            <button onclick="switchTabAndScroll('tab-saude', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
               🩺 Saúde e Bem-Estar
             </button>
-            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-navy-800 bg-navy-800 text-white shadow-sm transition-colors">
+            <button onclick="switchTabAndScroll('tab-comercio', this)" class="text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 transition-colors">
               🏪 Comércio Local
             </button>
           </div>
@@ -964,7 +996,6 @@
   </section>
 
   <!-- =================== GOOGLE MEU NEGÓCIO =================== -->
- <!-- =================== GOOGLE MEU NEGÓCIO =================== -->
   <section id="google-meu-negocio" class="relative bg-slate-100/80 border-y border-slate-200 py-16 md:py-28 overflow-hidden">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       
@@ -976,8 +1007,8 @@
             Presença Local & Google Maps
           </span>
           <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-[1.2] sm:leading-[1.18]">
-  <span class="inline-block bg-brand-blue text-white px-2.5 sm:px-3 py-0.5 rounded-lg shadow-sm align-baseline my-1">Destaque seu negócio</span> no Google e atraia clientes da sua região todos os dias
-</h2>
+            <span class="inline-block bg-brand-blue text-white px-2.5 sm:px-3 py-0.5 rounded-lg shadow-sm align-baseline my-1">Destaque seu negócio</span> no Google e atraia clientes da sua região todos os dias
+          </h2>
           <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed">
             Quando alguém pesquisa pelo seu serviço no bairro, quem aparece primeiro: <strong class="text-slate-800">você ou o seu concorrente?</strong> Nós estruturamos e otimizamos o seu <strong>Google Perfil da Empresa</strong> para colocar o seu negócio no topo das buscas.
           </p>
@@ -1422,6 +1453,34 @@
     if (modelosSection) {
       modelosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  // Funções para controle do Menu Mobile
+  function toggleMenuMobile() {
+    const menu = document.getElementById('menu-mobile');
+    const iconOpen = document.getElementById('icon-menu-open');
+    const iconClose = document.getElementById('icon-menu-close');
+
+    const isOpen = !menu.classList.contains('hidden');
+    if (isOpen) {
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    } else {
+      menu.classList.remove('hidden');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  }
+
+  function closeMenuMobile() {
+    const menu = document.getElementById('menu-mobile');
+    const iconOpen = document.getElementById('icon-menu-open');
+    const iconClose = document.getElementById('icon-menu-close');
+    
+    if (menu) menu.classList.add('hidden');
+    if (iconOpen) iconOpen.classList.remove('hidden');
+    if (iconClose) iconClose.classList.add('hidden');
   }
 </script>
 
