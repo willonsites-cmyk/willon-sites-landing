@@ -60,6 +60,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 
+<!-- Dados Estruturados Schema.org (Google Rich Snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Willon Sites",
+  "url": "https://willon-sites.com.br",
+  "logo": "https://willon-sites.com.br/logo.png",
+  "image": "https://willon-sites.com.br/hero-mockup.png",
+  "description": "Criação de sites profissionais prontos e otimizados para o comércio local sem mensalidade.",
+  "telephone": "+55-11-96390-7597",
+  "email": "contato@willonsites.com.br",
+  "priceRange": "R$ 500,00",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Brasil"
+  },
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "Site Profissional para Comércio Local",
+    "price": "500.00",
+    "priceCurrency": "BRL",
+    "description": "Site profissional com design moderno, sem mensalidade de manutenção ou hospedagem."
+  }
+}
+</script>
+
 <style>
   body { font-family: 'Inter', sans-serif; }
   h1, h2, h3, .font-display { font-family: 'Sora', sans-serif; }
@@ -1605,7 +1632,7 @@
     } else {
       menu.classList.remove('hidden');
       iconOpen.classList.add('hidden');
-      iconClose.classList.remove('hidden');
+      iconClose.classList.add('hidden');
     }
   }
 
